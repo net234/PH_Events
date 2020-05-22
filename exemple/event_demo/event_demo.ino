@@ -1,7 +1,7 @@
 /*************************************************
  *************************************************
     Sketch PH_Events  librairie pour les Events
-    Pierre HENRY  V1.2.2 15/03/2020
+    Pierre HENRY  V1.3.1 15/03/2020
 
     Gestion d'evenement en boucle GetEvent HandleEvent
 
@@ -49,7 +49,7 @@ void setup() {
   // Initialisation Hard des IO
 
   Serial.begin(9600);
-  Serial.println("\r\n\nSketch PH_Events V1.2.2");
+  Serial.println("\r\n\nSketch PH_Events V1.3.1");
 
 
   // Activation du timer

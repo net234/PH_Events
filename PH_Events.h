@@ -45,7 +45,9 @@
 //const int  FrequenceTimer = 100;  //  frequence d'interuption en Hz
 
 #define   MAX_WAITING_EVENT      10    // max event who can be pusshed at once
-#define   MAX_WAITING_DELAYEVENT 10    // max delayed event
+
+#define   MAX_WAITING_DELAYEVENT  10   // max delayed event
+
 // without timerone without Serial event
 // P:4836 R:305  N:225.500
 // without timerone with Serial event
@@ -81,8 +83,8 @@ struct stdEvent  {
   byte codeEvent = evNill;
   union {
     struct {
-      unsigned int   paramEvent = 0;
-      unsigned int   extendEvent = 0;
+      unsigned int   paramEvent;
+      unsigned int   extendEvent;
     };
     struct {
       byte  byte0;
@@ -127,6 +129,7 @@ class Event
     void   HandleEvent();
     bool   removeDelayEvent(const byte codeevent);
     bool   pushEvent(const byte codeevent, const int paramevent = 0, const int extendevent = 0);
+    bool   pushEvent(const byte codeevent, const long longEvent);
     bool   pushEvent(stdEvent* aevent);
     bool   pushEventMillisec(const long delayMillisec, stdEvent* aevent );
     bool   pushEventMillisec(const long delayMillisec, const byte codeevent,const int paramevent = 0, const int extendevent = 0 );

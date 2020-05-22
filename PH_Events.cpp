@@ -362,6 +362,14 @@ bool  Event::pushEvent(stdEvent* aevent) {
 
 }
 
+bool   Event::pushEvent(const byte codeevent, const long longEvent) {
+  stdEvent aEvent;
+  aEvent.codeEvent = (TypeCodeEvent)codeevent;
+  aEvent.longEvent = longEvent;
+  return ( pushEvent(&aEvent) );
+}
+
+
 bool   Event::pushEvent(const byte codeevent, const int paramevent, const int extendevent) {
   stdEvent aEvent;
   aEvent.codeEvent = (TypeCodeEvent)codeevent;
