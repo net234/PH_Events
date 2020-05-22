@@ -73,7 +73,7 @@ void loop() {
   // test
   MyEvent.GetEvent(true);
   MyEvent.HandleEvent();
-  switch (MyEvent.codeEvent())
+  switch (MyEvent.currentEvent.codeEvent)
   {
 
     case ev24H:
