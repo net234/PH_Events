@@ -78,29 +78,32 @@ enum  TypeCodeEvent {
   evUser = 99
 };
 
+
+
+
 // 5 byte structure for event
-struct stdEvent  {
-  byte codeEvent = evNill;
+struct __attribute__((__packed__)) stdEvent  {
+	byte codeEvent = evNill;
   union {
     struct {
-      unsigned int   paramEvent;
-      unsigned int   extendEvent;
+      unsigned int   paramEvent : 16;
+      unsigned int   extendEvent: 16;
     };
     struct {
-      byte  byte0;
-      byte  byte1;
-      byte  byte2;
-      byte  byte3;
+      byte  byte0 : 8;
+      byte  byte1 : 8;
+      byte  byte2 : 8;
+      byte  byte3 : 8;
     };
     struct {
-      int   int0;
-      int   int1;
+      int   int0 : 16;
+      int   int1 : 16;
     };
     struct {
-      long   longEvent;
+      long   longEvent : 32;
     };
     struct {
-      unsigned long   ULEvent;
+      unsigned long   ULEvent : 32;
     };
     struct {
       float   floatEvent;
