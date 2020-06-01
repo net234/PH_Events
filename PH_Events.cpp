@@ -35,22 +35,25 @@
 
 
 #include "PH_Events.h"
-
+#if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega16U4__)  //LEONARDO
+#define LED_PULSE_ON LOW
+#else
 #ifdef  __AVR__
-#include <avr/sleep.h>
 #define LED_PULSE_ON HIGH
 
 #else
 // Pour ESP c'est l'inverse
 #define LED_PULSE_ON LOW
 #endif
-
+#endif
 // todo replacer timerOne par ticker ?
 #ifdef  USE_TimerOne
 #include <TimerOne.h>
 #endif
 
-
+#ifdef  __AVR__
+#include <avr/sleep.h>
+#endif
 
 volatile byte     __div10Hz   = 0;    // diviseur pour avoir du 10Hz
 volatile byte     __div1Hz    = 0;    // diviseur pour avoir du 1Hz

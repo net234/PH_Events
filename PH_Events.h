@@ -172,7 +172,7 @@ class Event
 class EventTrack : public Event
 {
   public:
-    EventTrack(const byte aPinNumber = LED_BUILTIN) : Event(aPinNumber) {};
+	EventTrack(const byte aPinNumber = LED_BUILTIN, const byte inputStringSizeMax = 30) : Event{aPinNumber,inputStringSizeMax}  {};
     void HandleEvent();
   protected:
     byte _trackTime = 0;
