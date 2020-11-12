@@ -48,6 +48,9 @@
 
 #define   MAX_WAITING_DELAYEVENT  10   // max delayed event
 
+#ifndef	LED_BUILTIN
+#define LED_BUILTIN 13
+#endif
 // without timerone without Serial event
 // P:4836 R:305  N:225.500
 // without timerone with Serial event
