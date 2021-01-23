@@ -24,16 +24,15 @@
   Mise en public de timestamp
    time stamp (long) est destiné maintenir l'heure sur 24 Heures (0.. 86400L 0x15180)
    ajout du ev24H pour gerer les jours
-
+  reprise en main 19/11/2020
+  
  *************************************************/
 
 
 
-//#include <avr/sleep.h>
-//#include <avr/time.h>
 
 #include "PH_Events.h"
-//const byte Led = LED_BUILTIN;  // the pin with a LED
+
 EventTrack MyEvent;   // le gestionaire d'event local a ce stretch
 
 
